@@ -1,6 +1,7 @@
 ﻿# -*- coding: utf-8 -*-
 
 
+
 def menu ():
     print '+--------------------------------+'
     print '|1- Inserir novo contacto        |'
