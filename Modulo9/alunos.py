@@ -5,22 +5,22 @@ from collections import namedtuple
 import menu
 
 
-alunoReg = namedtuple("alunoReg", "id, nome")
-listaAlunos = []
+jogadoreReg = namedtuple("jogadorReg", "id, nome,nick,jogos_completos,vitorias,objetos_saidos")
+listajogador = []
 
 
 
 def encontrar_posicao(codigo):
     pos = -1
-    for i in range (len(listaAlunos)):
-        if listaAlunos[i].id == codigo:
+    for i in range (len(listajogador)):
+        if listajogador[i].id == codigo:
             pos = i
             break
                             
     return pos
 
 
-def inserir_aluno():
+def inserir_jogador():
     cod = input("Qual o codigo? ")
 
     pos = encontrar_posicao(cod)
@@ -32,33 +32,33 @@ def inserir_aluno():
     #ler dados
     nome = raw_input("Qual o nome? ")
     
-    registo = alunoReg(cod, nome)
-    listaAlunos.append(registo)
+    registo = jogadorReg(cod, nome)
+    listajogador.append(registo)
 
 
-def pesquisar_aluno():
-    cod = input("Qual o codigo do aluno a pesquisar? ")
+def pesquisar_jogador():
+    cod = input("Qual o codigo do jogador a pesquisar? ")
 
     pos = encontrar_posicao(cod)
 
     if pos == -1:
-        print "Não existe aluno com esse código"
+        print "Não existe jogador com esse código"
         return
 
-    print "Código: ", listaAlunos[pos].id
-    print "Nome: ", listaAlunos[pos].nome
+    print "Código: ", listajogador[pos].id
+    print "Nome: ", listajogador[pos].nome
     
 
 
-def listar_alunos():
-    for i in range (len(listaAlunos)):
-        print "Código: ", listaAlunos[i].id
-        print "Nome: ", listaAlunos[i].nome
+def listar_jogador():
+    for i in range (len(listajogadore)):
+        print "Código: ", listajogador[i].id
+        print "Nome: ", listajogador[i].nome
         
   
 
-def eliminar_aluno():
-    cod = input ("Código do aluno a eliminar --> ")
+def eliminar_jogador():
+    cod = input ("Código do jogador a eliminar --> ")
     pos = encontrar_posicao(cod)
 
     if pos == -1:
@@ -66,21 +66,21 @@ def eliminar_aluno():
         return
 
     # TODO: Confirmar eliminação
-    listaAlunos.pop(pos)
+    listajogador.pop(pos)
 
 
     
-def alterar_aluno():
-    cod = input ("Código do aluno a alterar --> ")
+def alterar_jogador():
+    cod = input ("Código do jogador a alterar --> ")
     pos = encontrar_posicao(cod)
 
     if pos == -1:
-        print "Não existe aluno com esse código"
+        print "Não existe jogador com esse código"
         return
 
     # só altera o nome
     novonome = raw_input("Qual o nome? ")
-    listaAlunos[pos] = listaAlunos[pos]._replace(nome=novonome)
+    listajogador[pos] = listajogador[pos]._replace(nome=novonome)
 
 
 
@@ -91,18 +91,18 @@ def gerir():
     terminar = False
 
     while not terminar:
-        op = menu.alunos()
+        op = menu.jogador()
 
         if op == '1':
-            inserir_aluno()
+            inserir_jogador()
         elif op =='2':
-            listar_alunos()
+            listar_jogador()
         elif op == '3':
-            pesquisar_aluno()
+            pesquisar_jogador()
         elif op == '4':
-            alterar_aluno()
+            alterar_jogador()
         elif op == '5':
-            eliminar_aluno()
+            eliminar_jogador()
         elif op == '0':
             terminar = True
 
