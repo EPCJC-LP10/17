@@ -5,7 +5,7 @@ from collections import namedtuple
 import menu
 
 
-jogadoreReg = namedtuple("jogadorReg", "id, nome,nick,jogos_completos,vitorias,objetos_saidos")
+jogadorReg = namedtuple("jogadorReg", "id, nome,nick,jogos_completos,vitorias,objetos_saidos")
 listajogador = []
 
 
@@ -31,27 +31,15 @@ def inserir_jogador():
 
     #ler dados
     nome = raw_input("Qual o nome? ")
+    nick= raw_input ('Qual e o nick ? ')
     
-    registo = jogadorReg(cod, nome)
+    registo = jogadorReg(cod, nome, nick, 0, 0, [])
     listajogador.append(registo)
 
 
-def pesquisar_jogador():
-    cod = input("Qual o codigo do jogador a pesquisar? ")
-
-    pos = encontrar_posicao(cod)
-
-    if pos == -1:
-        print "Não existe jogador com esse código"
-        return
-
-    print "Código: ", listajogador[pos].id
-    print "Nome: ", listajogador[pos].nome
-    
-
 
 def listar_jogador():
-    for i in range (len(listajogadore)):
+    for i in range (len(listajogador)):
         print "Código: ", listajogador[i].id
         print "Nome: ", listajogador[i].nome
         
@@ -98,10 +86,8 @@ def gerir():
         elif op =='2':
             listar_jogador()
         elif op == '3':
-            pesquisar_jogador()
-        elif op == '4':
             alterar_jogador()
-        elif op == '5':
+        elif op == '4':
             eliminar_jogador()
         elif op == '0':
             terminar = True
