@@ -16,29 +16,17 @@ listaobjeto = []
 def inserir_objeto():
     codigo = input("Qual o codigo? ")
 
-    pos = encontrar_posicao(codigo)
-
-    if pos >= 0:
-        print "Código já existe"
-        return
+    #if codigo >= 0:
+    #    print "Código já existe"
+    #    return
 
     #ler dados
     nome = raw_input("Qual o nome? ")
     marca = raw_input('Qual a marca? ')
-    modelo= raw_input('Qual o modelo')
+    modelo= raw_input('Qual o modelo? ')
     preco= raw_input('Qual o preço? ')
     registo = objetoReg(codigo, nome,marca,modelo,preco)
     listaobjeto.append(registo)
-
-def encontrar_posicao(codigo):
-    pos = -1
-    for i in range (len(listaobjeto)):
-        if listaobjeto[i].codigo == codigo:
-            pos = i
-            break
-                            
-    return pos
-
 
 
 def listar_objeto():
@@ -52,22 +40,20 @@ def listar_objeto():
 
 def eliminar_objeto():
     codigo = input ("Código do objeto a eliminar --> ")
-    pos = encontrar_posicao(codigo)
 
-    if pos == -1:
+    if codigo == -1:
         print "Não existe objeto com esse código"
         return
 
     # TODO: Confirmar eliminação
-    listaobjeto.pop(pos)
+    listaobjeto.pop(codigo)
 
 
     
 def alterar_objeto():
     codigo = input ("Código do objeto a alterar --> ")
-    pos = encontrar_posicao(codigo)
 
-    if pos == -1:
+    if codigo == -1:
         print "Não existe objeto com esse código"
         return
 
@@ -75,7 +61,8 @@ def alterar_objeto():
     novonome = raw_input("Qual o nome? ")
     novomarca = raw_input("Qual a marca? ")
     novomodelo= raw_input("Qual e o modelo? ")
-    listaobjeto[pos] = listaobjeto[pos]._replace(nome=novonome,marca=novomarca,modelo=novomodelo)
+    novopreco= raw_input('Qual e o preço?' )
+    listaobjeto[codigo] = listaobjeto[codigo]._replace(nome=novonome,marca=novomarca,modelo=novomodelo,preco=novopreco)
 
 
 

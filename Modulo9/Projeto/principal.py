@@ -1,21 +1,26 @@
 # -*- coding: utf-8 -*-
 
 import menu
-import alunos
+import Jogadores
 import util
+import Objetos
+import jogo
 
 
 # nome dos ficheiros
-fxAlunos = "fxAlunos.dat"
+fxJogadores = "fxJogadores.dat"
+fxObjetos = "fxObjetos.dat"
 
 def ler_ficheiros():
-	# adicionar todos ficheiros a ler
-	alunos.listajogador = util.ler_ficheiro(fxAlunos)
+    # adicionar todos ficheiros a ler
+    Jogadores.listajogador = util.ler_ficheiro(fxJogadores)
+    Objetos.listaobjeto = util.ler_ficheiro(fxObjetos)
 
 
 def escrever_ficheiros():
-	# adicionar todos ficheiros a guardar
-	util.escrever_ficheiro(fxAlunos, alunos.listaAlunos)
+    # adicionar todos ficheiros a guardar
+    util.escrever_ficheiro(fxJogadores, Jogadores.listajogador)
+    util.escrever_ficheiro(fxObjetos, Objetos.listaobjeto)
 
 
 
@@ -28,9 +33,11 @@ while not terminar:
     op = menu.principal()
     
     if op == '1':
-        alunos.gerir()
+        Jogadores.gerir()
     elif op == '2':
-        pass    #por fazer
+        Objetos.gerir ()
+    elif op == '3':
+        jogo.start()
     elif op == '0':
         terminar = True
 

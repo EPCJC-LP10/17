@@ -10,24 +10,13 @@ listajogador = []
 
 
 
-def encontrar_posicao(codigo):
-    pos = -1
-    for i in range (len(listajogador)):
-        if listajogador[i].id == codigo:
-            pos = i
-            break
-                            
-    return pos
-
-
 def inserir_jogador():
     codigo = input("Qual o codigo? ")
 
-    pos = encontrar_posicao(codigo)
-
-    if pos >= 0:
-        print "Código já existe"
-        return
+    
+    #if codigo >= 0:
+    #    print "Código já existe"
+    #    return
 
     #ler dados
     nome = raw_input("Qual o nome? ")
@@ -35,45 +24,48 @@ def inserir_jogador():
     jogos_completos = 0
     vitorias = 0
     objetos_saidos = 0
-    registo = JogadorReg(codigo, nome, nick)
+    registo = JogadorReg(codigo, nome, nick,jogos_completos,vitorias,objetos_saidos)
     listajogador.append(registo)
 
 
 def listar_jogador():
+    print "Código  | ", 
+    print "Nome    | ", 
+    print "Nick    | ", 
+    print "Jogos Completos | ", 
+    print "Vitorias:  | "
     for i in range (len(listajogador)):
-        print "Código: ", listajogador[i].id
-        print "Nome: ", listajogador[i].nome
-        print "Nick: ", listajogador[i].nick
-        print "Jogos Completos: ", listajogador[i].jogos_completos
-        print "Vitorias: ", listajogador[i].vitorias
-        print "Objetos ja saidos: ", listajogador[i].objetos_saidos
+        print listajogador[i].codigo, " | ", 
+        print listajogador[i].nome, " | ", 
+        print listajogador[i].nick, " | ", 
+        print listajogador[i].jogos_completos, " | ", 
+        print listajogador[i].vitorias, " | "
+        #print "Objetos ja saidos: ", listajogador[i].objetos_saidos
 
 def eliminar_jogador():
-    cod = input ("Código do aluno a eliminar --> ")
-    pos = encontrar_posicao(cod)
+    codigo = input ("Código do jogador a eliminar --> ")
 
-    if pos == -1:
-        print "Não existe aluno com esse código"
+    if codigo == -1:
+        print "Não existe jogador com esse código"
         return
 
     # TODO: Confirmar eliminação
-    listajogador.pop(pos)
+    listajogador.pop(codigo)
 
 
     
 def alterar_jogador():
-    codigo = input ("Código do aluno a alterar --> ")
-    pos = encontrar_posicao(codigo)
+    codigo = input ("Código do jogador a alterar --> ")
 
-    if pos == -1:
-        print "Não existe aluno com esse código"
+    if codigo == -1:
+        print "Não existe jogador com esse código"
         return
 
     # só altera o nome
     novo_nome = raw_input("Qual o nome? ")
     novo_nick= raw_input("Qual o nick? ")
     
-    listajogador[pos] = listajogador[pos]._replace(nome=novo_nome,nick=novo_nick)
+    listajogador[codigo] = listajogador[codigo]._replace(nome=novo_nome,nick=novo_nick)
 
 
 
