@@ -6,6 +6,7 @@ def principal():
     print
     print "   1. Gestão de jogador"
     print "   2. Gestao de objetos"
+    print "   3. Jogar" 
     print 
     print "   0. Sair"
     print 

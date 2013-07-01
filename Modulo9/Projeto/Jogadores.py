@@ -9,14 +9,23 @@ JogadorReg = namedtuple("JogadorReg", "codigo, nome, nick,jogos_completos,vitori
 listajogador = []
 
 
+def encontrar_posicao(codigo):
+    pos = -1
+    for i in range (len(listajogador)):
+        if listajogador[i].codigo == codigo:
+            pos = i
+            break
+                            
+    return pos
 
 def inserir_jogador():
     codigo = input("Qual o codigo? ")
 
-    
-    #if codigo >= 0:
-    #    print "Código já existe"
-    #    return
+    pos = encontrar_posicao(codigo)
+
+    if pos >= 0:
+        print "Código já existe"
+        return
 
     #ler dados
     nome = raw_input("Qual o nome? ")
@@ -45,10 +54,11 @@ def listar_jogador():
 def eliminar_jogador():
     codigo = input ("Código do jogador a eliminar --> ")
 
-    if codigo == -1:
-        print "Não existe jogador com esse código"
-        return
+    pos = encontrar_posicao(codigo)
 
+    if pos == -1:
+        print "Não existe aluno com esse código"
+        return
     # TODO: Confirmar eliminação
     listajogador.pop(codigo)
 
@@ -56,9 +66,11 @@ def eliminar_jogador():
     
 def alterar_jogador():
     codigo = input ("Código do jogador a alterar --> ")
+    
+    pos = encontrar_posicao(codigo)
 
-    if codigo == -1:
-        print "Não existe jogador com esse código"
+    if pos == -1:
+        print "Não existe aluno com esse código"
         return
 
     # só altera o nome

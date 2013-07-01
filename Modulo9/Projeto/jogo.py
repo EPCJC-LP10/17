@@ -52,11 +52,8 @@ def escolherObjeto():
 
 
 def jogar():
-  #  vitoria = False
-
-   # while  not vitoria:
-        escolherObjeto()
     
+
         
     
 def start():

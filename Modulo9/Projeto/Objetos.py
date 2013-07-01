@@ -13,13 +13,24 @@ import menu
 objetoReg = namedtuple("objetoReg", "codigo,nome,marca,modelo,preco")
 listaobjeto = []
 
+def encontrar_posicao(codigo):
+    pos = -1
+    for i in range (len(listaobjeto)):
+        if listaobjeto[i].codigo == codigo:
+            pos = i
+            break
+                            
+    return pos
+
 def inserir_objeto():
     codigo = input("Qual o codigo? ")
 
-    #if codigo >= 0:
-    #    print "Código já existe"
-    #    return
+    pos = encontrar_posicao(codigo)
 
+    if pos >= 0:
+        print "Código já existe"
+        return
+ 
     #ler dados
     nome = raw_input("Qual o nome? ")
     marca = raw_input('Qual a marca? ')
@@ -40,9 +51,10 @@ def listar_objeto():
 
 def eliminar_objeto():
     codigo = input ("Código do objeto a eliminar --> ")
+    pos = encontrar_posicao(codigo)
 
-    if codigo == -1:
-        print "Não existe objeto com esse código"
+    if pos <= 0:
+        print "Código invalido"
         return
 
     # TODO: Confirmar eliminação
@@ -52,8 +64,8 @@ def eliminar_objeto():
     
 def alterar_objeto():
     codigo = input ("Código do objeto a alterar --> ")
-
-    if codigo == -1:
+    pos = encontrar_posicao(codigo)
+    if pos <= 0:
         print "Não existe objeto com esse código"
         return
 
