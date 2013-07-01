@@ -9,12 +9,12 @@ c__builtin__
 tuple
 p3
 (I1
-S'1'
+S'rui'
 p4
-S'1'
+S'killer'
 p5
-I0
-I0
+I3
+I2
 I0
 tp6
 tp7
@@ -38,11 +38,11 @@ ag5
 aa(lp17
 S'jogos_completos'
 p18
-aI0
+aI3
 aa(lp19
 S'vitorias'
 p20
-aI0
+aI2
 aa(lp21
 S'objetos_saidos'
 p22
@@ -53,12 +53,12 @@ bag1
 (g2
 g3
 (I2
-S'Rui Niete'
+S'paulo'
 p25
-S'Killer Bee'
+S'BeeKing'
 p26
-I0
-I0
+I4
+I3
 I0
 tp27
 tp28
@@ -76,10 +76,10 @@ g16
 ag26
 aa(lp34
 g18
-aI0
+aI4
 aa(lp35
 g20
-aI0
+aI3
 aa(lp36
 g22
 aI0
@@ -89,12 +89,12 @@ bag1
 (g2
 g3
 (I3
-S'Vitor Neto'
+S'Maria'
 p39
-S'Vitooo'
+S'Margarita'
 p40
-I0
-I0
+I2
+I1
 I0
 tp41
 tp42
@@ -112,10 +112,10 @@ g16
 ag40
 aa(lp48
 g18
-aI0
+aI2
 aa(lp49
 g20
-aI0
+aI1
 aa(lp50
 g22
 aI0

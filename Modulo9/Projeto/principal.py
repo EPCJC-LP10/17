@@ -7,6 +7,7 @@ import Objetos
 import jogo
 
 
+
 # nome dos ficheiros
 fxJogadores = "fxJogadores.dat"
 fxObjetos = "fxObjetos.dat"

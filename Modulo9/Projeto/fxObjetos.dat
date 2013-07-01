@@ -11,11 +11,11 @@ p3
 (I1
 S'Martelo'
 p4
-S'B&D'
+S'M'
 p5
-S'X100'
+S'M'
 p6
-S'40'
+S'100'
 p7
 tp8
 tp9
@@ -50,13 +50,13 @@ bag1
 (g2
 g3
 (I2
-S"TV 50''"
+S'Alicate'
 p25
-S'Panasonic'
+S'A'
 p26
-S'STO60'
+S'A'
 p27
-S'500'
+S'35'
 p28
 tp29
 tp30

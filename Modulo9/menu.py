@@ -4,10 +4,11 @@ def principal():
     print
     print " **** MENU ****** "
     print
-    print "   1. Gestão de jogador"
-    print "   2. Gestao de objetos"
-    print "   3. Jogar" 
+    print "   1. Gestão de Jogadores"
+    print "   2. Gestão de Objetos"
     print 
+    print "   3. JOGAR"
+    print
     print "   0. Sair"
     print 
 
@@ -15,22 +16,33 @@ def principal():
     return op
 
 
-def jogadores():
+def jogador():
     print
-    print " *** Menu Alunos **** "
+    print " *** Menu Jogadores **** "
     print
-    print "1. Inserir novo jogador"
-    print "2. Listar todos jogadores"
-    print "3. Pesquisar jogador"
-    print "4. Alterar dados de um jogador"
-    print "5. Eliminar jogador"
+    print "1. Inserir novo Jogador"
+    print "2. Listar todos Jogadores"
+    print "3. Alterar dados de um Jogador"
+    print "4. Eliminar Jogador"
     print 
     print "0. Menu Anterior"
 
     op = raw_input("Opção: ")
     return op
 
+def objetos():
+    print
+    print " *** Menu Objetos **** "
+    print
+    print "1. Inserir novo Objeto"
+    print "2. Listar todos Objetos"
+    print "3. Alterar dados de um Objetos"
+    print "4. Eliminar Objeto"
+    print 
+    print "0. Menu Anterior"
 
+    op = raw_input("Opção: ")
+    return op
 
 if __name__ == "__main__":
     print "Este programa não deve ser executado diretamente"

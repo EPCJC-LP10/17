@@ -38,7 +38,7 @@ def inserir_objeto():
     nome = raw_input("Qual o nome? ")
     marca = raw_input('Qual a marca? ')
     modelo= raw_input('Qual o modelo')
-    preco= raw_input('Qual o preço)
+    preco= raw_input('Qual o preço' )
     registo = objetoReg(cod, nome,marca,modelo,preco)
     listaobjeto.append(registo)
 

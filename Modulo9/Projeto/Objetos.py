@@ -34,11 +34,10 @@ def inserir_objeto():
     #ler dados
     nome = raw_input("Qual o nome? ")
     marca = raw_input('Qual a marca? ')
-    modelo= raw_input('Qual o modelo? ')
-    preco= raw_input('Qual o preço? ')
+    modelo = raw_input('Qual o modelo? ')
+    preco = raw_input('Qual o preço? ')
     registo = objetoReg(codigo, nome,marca,modelo,preco)
     listaobjeto.append(registo)
-
 
 def listar_objeto():
     for i in range (len(listaobjeto)):
